@@ -1,0 +1,34 @@
+rainbow span {
+  display: inline-block;
+  animation: rainbow 2s infinite;
+}
+
+rainbow span:nth-child(4n+2) {
+  animation-delay: -.5s;
+}
+
+rainbow span:nth-child(4n+3) {
+  animation-delay: -1s;
+}
+
+rainbow span:nth-child(4n+4) {
+  animation-delay: -1.5s;
+}
+
+@keyframes rainbow {
+  0% {
+    color: red;
+  }
+  25% {
+    color: yellow;
+  }
+  50% {
+    color: green;
+  }
+  75% {
+    color: blue;
+  }
+  100% {
+    color: red;
+  }
+}
