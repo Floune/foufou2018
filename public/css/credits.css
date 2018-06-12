@@ -1,54 +1,132 @@
+body {
+	background-color: #46c5d2;
+}
 .container {
+	margin-top: 2em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	align-content: center;
 }
+
+.blink {
+	border: 2px solid black;
+	border-radius: 5px;
+	font-size: 2em;
+	text-align: center;
+	color:red; background-color:pink; 
+	animation: allblink 4s infinite;
+	width: 15em;
+}
+
+@keyframes allblink { 
+	0% { }
+	25% { color:green; background-color:lightgreen; } 
+	50% { color:blue; background-color:lightblue; } 
+	75% { color:yellow; background-color:black; } 
+}
+
 .messagedefilant {
-  display: block;
-  margin: 40px auto;
-  padding: 0;
-  overflow: hidden;
-  position: relative;
-  width: 70%;
-  max-width: 640px;
-  height: 60px;
+	display: block;
+	margin: 40px auto;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+	width: 70%;
+	max-width: 640px;
+	height: 60px;
 }
- 
+
 .messagedefilant div {
-  position: absolute;
-  min-width: 100%; 
+	position: absolute;
+	min-width: 100%; 
 }
- 
+
 .messagedefilant div span, 
 .messagedefilant div:after {
-  position: relative;
-  display: inline-block;
-  font-size: 2rem;
-  white-space: nowrap;
-  top:0;
+	position: relative;
+	display: inline-block;
+	font-size: 2rem;
+	white-space: nowrap;
+	top:0;
 }
- 
+
 .messagedefilant div span {
-  animation: defilement 10s infinite linear;
-  background-color: pink;
+	animation: defilement 10s infinite linear;
+	background-color: pink;
 }
- 
+
 .messagedefilant div:after {
-  position: absolute;
-  top:0; left:0;
-  content:attr(data-text);
-  animation: defilement2 10s infinite linear;
-  background-color: pink;
+	position: absolute;
+	top:0; left:0;
+	content:attr(data-text);
+	animation: defilement2 10s infinite linear;
+	background-color: pink;
 
 }
- 
+
 @keyframes defilement {
-  0% { margin-left: 0; }
-  100% { margin-left: -100%; }
+	0% { margin-left: 0; }
+	100% { margin-left: -100%; }
 }
- 
+
 @keyframes defilement2 {
-  0% { margin-left: 100%; }
-  100% { margin-left: 0%; }
+	0% { margin-left: 100%; }
+	100% { margin-left: 0%; }
+}
+
+/**ticket**/
+
+.ticket {
+	margin-top: 11em;
+	width: 370px;
+	height: 150px;
+	background-repeat: repeat-y;
+	background-position: 0 0, 0 0, 100% 0, 100% 0;
+	background-image : linear-gradient(45deg, transparent 75%, #e2af3c 75%), linear-gradient(135deg, transparent 75%, #e2af3c 75%), linear-gradient(-45deg, transparent 75%, #e2af3c 75%), linear-gradient(-135deg, transparent 75%, #e2af3c 75%);
+	background-size: 30px 15px;
+
+	transform: translateY(-50%);
+	box-shadow: 0 40px 15px -35px rgba(0,0,0,0.4);
+}
+
+.ticket::before {
+	content: 'New-York city';
+	position: absolute;
+	left:50%;
+
+	width: 310px;
+	height: 150px;
+
+	background-color: #e2af3c;
+	background: linear-gradient(#e2af3c, #e2af3c 15px, #292323 15px, #292323 17px, #e2af3c 17px, #e2af3c 90px, #292323 90px, #292323 92px, #e2af3c 92px, #e2af3c 120px, #292323 120px, #292323 122px, #e2af3c 122px);
+
+	font-size: 33px;
+	font-family: Impact, Charcoal, sans-serif;
+	line-height: 3;
+	text-align:center;
+	text-transform: uppercase;
+	font-weight: bold;
+
+	transform: translateX(-50%);
+}
+
+.ticket::after {
+	content: 'un aller-retour pour 2 personnes';
+	position: absolute;
+	left: 50%;
+
+	width: 330px;
+	height: 150px;
+
+	background: linear-gradient(to right, rgba(255, 255, 13, 0.2), rgba(88, 70, 35, 0.4), rgba(46, 27, 11, 0.5), rgba(255, 255, 13, 0.2) 80%);
+
+	font-size: 12px;
+	font-family: "Time New Roman", Times, sans-serif;
+	text-align:center;
+	text-transform: uppercase;
+	line-height: 22.5;
+
+	transform: translateX(-50%);
 }
