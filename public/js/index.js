@@ -10,7 +10,7 @@
                     function (buffer) {
                         source.buffer = buffer;
                         source.connect(audioCtx.destination);
-                        source.loop = false;
+                        source.loop = true;
                     });
             source.start(0);
         });
